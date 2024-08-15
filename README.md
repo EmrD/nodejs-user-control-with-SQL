@@ -1,10 +1,48 @@
-# Node + Express Service Starter
+# User Registration and Login Application
 
-This is a simple API sample in Node.js with express.js based on [Google Cloud Run Quickstart](https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service).
+This project is a Node.js application for simple user registration and login functionalities. It uses MySQL to store user data, and passwords are securely hashed using the `bcryptjs` library.
 
-## Getting Started
+## Requirements
 
-Server should run automatically when starting a workspace. To run manually, run:
-```sh
-npm run dev
+- Node.js
+- MySQL
+- `npm` or `yarn` (package manager)
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd <repository-directory>
+```
+
+### Install Dependencies
+```bash
+npm install
+
+yarn install
+```
+
+### Start the Server
+```bash
+node index.js
+```
+
+### cURL Examples
+
+## Register
+
+```bash
+curl -X POST http://localhost:3000/register \
+  -H "Content-Type: application/json" \
+  -d '{"username": "testuser", "password": "password123"}'
+```
+
+## Login
+
+```bash
+curl -X POST http://localhost:3000/login \
+  -H "Content-Type: application/json" \
+  -d '{"username": "testuser", "password": "password123"}'
 ```
